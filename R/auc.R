@@ -35,7 +35,7 @@ auc <- function(y, yhat) {
       return(area)
     }
     ltData <- lapply(seq(0.01, 1, by = 0.01), function(cutoff) aucData(y, yhat, cutoff))
-    data <- data.frame(rbindlist(ltData))
+    data <- do.call('rbind', ltData)
     data <- data[order(data[, 'fpr']), ]
     vtAUC <- sapply(2:nrow(data), function(i) aucs(data, i))
     auc <- sum(vtAUC, na.rm = TRUE)

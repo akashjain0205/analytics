@@ -9,5 +9,6 @@ Description: The package provides useful functions to perform day-to-day
     data manipulation operations, data quality checks and post modelling
     statistical checks; the functions are consistent for both 
     data.frame and data.table
-Depends: R (>= 3.1.3), data.table (>= 1.9.4)
+Depends: R (>= 3.1.3)
+Imports: data.table (>= 1.9.4)
 License: GPL
