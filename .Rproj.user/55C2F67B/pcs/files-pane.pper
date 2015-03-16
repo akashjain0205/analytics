@@ -1,0 +1,9 @@
+{
+    "path" : "~/analytics",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

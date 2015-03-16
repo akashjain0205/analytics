@@ -1,0 +1,37 @@
+#' Identify outliers in a variable
+#' 
+#'  Takes in a vector, and returns count and index of outliers
+#'  @param vector an integer or numeric vector
+#'  @return a list with two elements: count and index of outliers
+#'  @author Akash Jain
+#'  @seealso \code{\link{decile}}, \code{\link{pentile}}, \code{\link{imputemiss}}
+#'  @examples
+#'  # Let's create a vector
+#' scores <- c(1, 4, 7, 10, 566, 21, 25, 27, 32, 35, 
+#'             49, 60, 75, 23, 45, 86, 26, 38, 34, 223, -3)
+#' 
+#' # Identify the count of outliers and their index
+#' ltOutliers <- outliers(vector = scores)
+#' numOutliers <- ltOutliers$numOutliers
+#' idxOutliers <- ltOutliers$idxOutliers
+#' valOutliers <- scores[idxOutliers]
+#'  @export
+outliers <- function(vector) {
+  if(class(vector) != 'integer' && class(vector) != 'numeric') {
+    stop('Invalid input: vector should be either integer or numeric')
+  } else {
+    p25 <- quantile(vector, c(0.25), na.rm = TRUE)
+    p75 <- quantile(vector, c(0.75), na.rm = TRUE)
+    iqr <- p75 - p25
+    uplim <- p75 + 1.5*iqr
+    lowlim <- p25 - 1.5*iqr
+    numOutliers <- sum(vector < lowlim, na.rm = TRUE) + sum(vector > uplim, na.rm = TRUE)
+    idxOutliers <- sort(c(match(na.omit(vector[vector < lowlim]), vector), 
+                          match(na.omit(vector[vector > uplim]), vector)))
+    valueOutliers <- vector[idxOutliers]
+    print(paste('Number of outliers:', numOutliers))
+    print(paste('Value of outliers:', paste(valueOutliers, collapse = ' ')))
+    return(list(numOutliers = numOutliers, 
+                idxOutliers = idxOutliers))    
+  }
+}

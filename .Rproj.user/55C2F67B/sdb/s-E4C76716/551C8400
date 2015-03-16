@@ -1,0 +1,17 @@
+{
+    "contents" : "#' Area under curve of predicted binary response\n#' \n#'  Takes in actual binary response and predicted probabilities, and returns auc value\n#'  @param y actual binary response\n#'  @param yhat predicted probabilities corresponding to the actual binary response\n#'  @return area under the ROC curve\n#'  @author Akash Jain\n#'  @seealso \\code{\\link{accuracy}}, \\code{\\link{ks}}, \\code{\\link{iv}}, \\code{\\link{gini}}, \\code{\\link{splitdata}}\n#'  @examples\n#'  # a data frame with y and yhat\n#' df <- data.frame(y = c(1, 0, 1, 1, 0, 0, 1, 0, 1, 0),\n#'                  yhat = c(0.86, 0.23, 0.65, 0.92, 0.37, 0.45, 0.72, 0.19, 0.92, 0.50))\n#'\n#' # AUC figure\n#' AUC <- auc(y = df[, 'y'], yhat = df[, 'yhat'])\n#'  @export\nauc <- function(y, yhat) {\n  if(length(unique(y)) != 2 | (class(y) != 'integer' && class(y) != 'numeric' && class(y) != 'factor')) {\n    stop('Invalid input: y should be integer or factor vector representing a binary response')\n  } else if(class(yhat) != 'numeric' | max(yhat) > 1 | min(yhat) < 0) {\n    stop('Invalid input: yhat should be numeric vector of predicted probabilities in the range 0 to 1')\n  } else if(length(y) != length(yhat)) {\n    stop('Invalid input: vectors y and yhat should have the same length')\n  } else {\n    aucData <- function(y, yhat, cutoff) {\n      ypred <- ifelse(yhat > cutoff, 1, 0)\n      accuracyNum <- table(y, ypred)\n      tpr <- accuracyNum[4]/sum(accuracyNum[2,])\n      fpr <- 1 - (accuracyNum[1]/sum(accuracyNum[1,]))\n      aucData <- data.frame(tpr = tpr, fpr = fpr)\n      return(aucData)\n    }\n    aucs <- function(data, i) {\n      area <- 0.5 *(data$fpr[i] - data$fpr[i-1]) * (data$tpr[i] + data$tpr[i-1])\n      return(area)\n    }\n    ltData <- lapply(seq(0.01, 1, by = 0.01), function(cutoff) aucData(y, yhat, cutoff))\n    data <- data.frame(rbindlist(ltData))\n    data <- data[order(data[, 'fpr']), ]\n    vtAUC <- sapply(2:nrow(data), function(i) aucs(data, i))\n    auc <- sum(vtAUC, na.rm = TRUE)\n    print(paste('AUC:', round(auc, digits = 2), sep = ' '))\n    par(xaxs = 'i', yaxs = 'i')\n    plot(x = data$fpr, \n         y = data$tpr, \n         type = 'l', \n         xlab = 'False Positive Rate', \n         ylab = 'True Positive Rate',\n         xlim = c(0, 1),\n         ylim = c(0, 1),\n         col = 'green',\n         lwd = 2)\n    return(auc)\n  }\n}",
+    "created" : 1426526134349.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3352279052",
+    "id" : "551C8400",
+    "lastKnownWriteTime" : 1426494037,
+    "path" : "~/analytics/R/auc.R",
+    "project_path" : "R/auc.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

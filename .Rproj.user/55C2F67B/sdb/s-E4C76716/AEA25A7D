@@ -1,0 +1,16 @@
+{
+    "contents" : "Package: analytics\nType: Package\nTitle: A package for data manipulation, data quality and statistical checks\nVersion: 1.0\nDate: 2015-03-15\nAuthor: Akash Jain\nMaintainer: Akash Jain <akashjain02.05@gmail.com>\nDescription: The package provides useful functions to perform day-to-day\n    data manipulation operations, data quality checks and post modelling\n    statistical checks; the functions are consistent for both \n    data.frame and data.table\nDepends: R (>= 3.1.3), data.table (>= 1.9.4)\nLicense: GPL",
+    "created" : 1426523700352.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3650686521",
+    "id" : "AEA25A7D",
+    "lastKnownWriteTime" : 1426523970,
+    "path" : "~/analytics/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "dcf"
+}
