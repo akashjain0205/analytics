@@ -1,14 +1,13 @@
 Package: analytics
 Type: Package
-Title: A package for data manipulation, data quality and statistical checks
+Title: Easy Data Manipulation, Data Quality and Statistical Checks
 Version: 1.0
 Date: 2015-03-15
 Author: Akash Jain
 Maintainer: Akash Jain <akashjain02.05@gmail.com>
-Description: The package provides useful functions to perform day-to-day
-    data manipulation operations, data quality checks and post modelling
-    statistical checks; the functions are consistent for both 
-    data.frame and data.table
+Description: Offers useful functions to perform day-to-day data manipulation 
+    operations, data quality checks and post modelling statistical checks. 
+    Functions are consistent for both data.frame and data.table.
 Depends: R (>= 3.1.3)
 Imports: data.table (>= 1.9.4)
 License: GPL
