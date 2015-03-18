@@ -19,6 +19,14 @@ an integer vector of decile values
 \description{
 Takes in a vector, and returns the deciles
 }
+\details{
+\code{decile} is a convinient function to get integer deciles of an integer or
+ numeric vector. By default, the smallest values are placed in the smallest decile.
+
+ Sometimes one may want to put smallest values in the biggest decile, and for that
+ the user can set the \code{decreasing} argument to \code{TRUE}; by default it is
+ \code{FALSE}.
+}
 \examples{
 # Let's create a vector
 scores <- c(1, 4, 7, 10, 15, 21, 25, 27, 32, 35,

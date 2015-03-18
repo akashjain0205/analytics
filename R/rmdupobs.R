@@ -2,6 +2,14 @@
 #' 
 #'  Takes in a data, and returns it with duplicate observations removed
 #'  @param data a data.frame or data.table
+#'  @details
+#'  Duplicate observations are redundant and they need to be removed from the data.
+#'  \code{rmdupobs} does just that; it removes the duplicated observations (the ones
+#'  in which value of every variable is duplicated) and returns the data with only 
+#'  unique observations.
+#'  
+#'  It works for both data.frame and data.table and returns the \code{data} with same class
+#'  as input.
 #'  @return a \code{data} of same class as input with only unique observations
 #'  @author Akash Jain
 #'  @seealso \code{\link{randomise}}, \code{\link{rmdupkey}}, \code{\link{factorise}}

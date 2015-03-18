@@ -3,6 +3,12 @@
 #'  Takes in data and seed, and returns the data with randomly ordered observations
 #'  @param data a matrix, data.frame or data.table
 #'  @param seed an integer value
+#'  @details
+#'  Some of the modeling algorithms pick top p percent of the observations for
+#'  training the model, which could lead to skewed predictions. This function
+#'  solves that problem by randomly ordering the observations so that the response
+#'  variable has more or less the same distribution even if the algorithms don't pick
+#'  training observations randomly.
 #'  @return \code{data} of same class as input with randomly ordered observations
 #'  @author Akash Jain
 #'  @seealso \code{\link{factorise}}, \code{\link{rmdupkey}}, \code{\link{rmdupobs}}

@@ -17,6 +17,10 @@ mean absolute percentage error
 \description{
 Takes in actual and predicted linear response, and returns MAPE value
 }
+\details{
+\code{mape} calculates the mean absolute percentage error in a predicted linear
+ response.
+}
 \examples{
 # a data frame with y and yhat
  df <- data.frame(y = c(1.5, 2, 3.2),

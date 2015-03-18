@@ -15,6 +15,15 @@ a \code{data} of same class as input with only unique observations
 \description{
 Takes in a data, and returns it with duplicate observations removed
 }
+\details{
+Duplicate observations are redundant and they need to be removed from the data.
+ \code{rmdupobs} does just that; it removes the duplicated observations (the ones
+ in which value of every variable is duplicated) and returns the data with only
+ unique observations.
+
+ It works for both data.frame and data.table and returns the \code{data} with same class
+ as input.
+}
 \examples{
 # Let's create a data.frame
 df <- data.frame(x = c(1, 2, 5, 1), y = c(3, 3, 1, 3))

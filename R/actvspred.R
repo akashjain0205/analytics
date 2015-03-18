@@ -5,11 +5,19 @@
 #'  @param y actual linear response
 #'  @param yhat predicted linear response
 #'  @param n quantiles to be created for comparison
+#'  @details
+#'  \code{actvspred} function divides the data into \code{n} (given as input by the user)
+#'  quantiles and computes mean of \code{y} and \code{yhat} for each quantile. All 
+#'  \code{NA}'s in \code{n}, \code{y} and \code{yhat} are removed for calculation.
+#'  
+#'  The function also plots a line chart of average actual response and average predicted
+#'  response over \code{n} quantiles. This plot can be used to visualize how close both
+#'  the lines are.
 #'  @return a data.frame with average actual and predicted response in each quantile
 #'  @author Akash Jain
 #'  @seealso \code{\link{mape}}, \code{\link{splitdata}}
 #'  @examples
-#'  # a data frame with y and yhat
+#'  # A data frame with y and yhat
 #' df <- data.frame(y = c(1, 2, 3, 6, 8, 10, 15),
 #'                  yhat = c(1.2, 2.5, 3.3, 6.9, 9.3, 6.5, 12.3))
 #'

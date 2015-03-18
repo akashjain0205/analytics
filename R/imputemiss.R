@@ -4,6 +4,9 @@
 #'  with that value
 #'  @param vector a vector with missing values
 #'  @param value the value to be used for imputation
+#'  @details
+#'  \code{imputemiss} imputes the missing (NA) values in the vector with a specified value.
+#'  The function simplifies the code for imputation.
 #'  @return \code{vector} of the same class as input vector with imputed missing values
 #'  @author Akash Jain
 #'  @seealso \code{\link{decile}}, \code{\link{pentile}}, \code{\link{outliers}}

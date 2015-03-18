@@ -18,6 +18,25 @@ a data.frame which contains the non-missing values, missing values,
 \description{
 Takes in a data, and returns summary of continuous variables
 }
+\details{
+It is of utmost importance to know the distribution of continuous variables in the
+ data. \code{dqcontinuous} produces an output which tells - continuous variable,
+ non-missing values, missing values, percentage missing, minumum, average, maximum,
+ standard deviation, variance, common percentiles from 1 to 99, and number of outliers
+ for each continuous variable.
+
+ The function tags all integer and numeric variables as continuous, and produces output
+ for them; if you think there are some variables which are integer or numeric in the
+ data but they don't represent a continuous variable, change their type to an
+ appropriate class.
+
+ \code{dqcontinuous} uses the same criteria to identify outliers as the one used for
+ box plots. All values that are greater than 75th percentile value + 1.5 times the
+ inter quartile range or lesser than 25th percentile value - 1.5 times the inter
+ quartile range, are tagged as outliers.
+
+ This function works for both data.frame and data.table but returns a data.frame only.
+}
 \examples{
 # Let's create a data.frame
 df <- data.frame(x = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),

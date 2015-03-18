@@ -16,6 +16,17 @@ a data.frame which contains the variable, non-missing values, missing values,
 \description{
 Takes in a data, and returns summary of date variables
 }
+\details{
+\code{dqdate} produces summary of all date variables in the data. The function
+ identifies all variables as date if they are of class 'Date' or 'IDate'.
+
+ Generally the dates are imported in R as character. They must be converted to
+ an appropriate date format and then the function should be used.
+
+ The summary includes variable, non-missing values, missing values, minimum and
+ maximum of the date variabes. Input data can be a data.frame or data.table but the
+ output summary will be a data.frame only.
+}
 \examples{
 # Let's create a data.frame
 df <- data.frame(date = c('2012-11-21', '2015-1-4', '1996-4-30', '1979-9-23', '2005-5-13'),

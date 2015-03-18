@@ -17,6 +17,13 @@ randomise(data, seed = NULL)
 \description{
 Takes in data and seed, and returns the data with randomly ordered observations
 }
+\details{
+Some of the modeling algorithms pick top p percent of the observations for
+ training the model, which could lead to skewed predictions. This function
+ solves that problem by randomly ordering the observations so that the response
+ variable has more or less the same distribution even if the algorithms don't pick
+ training observations randomly.
+}
 \examples{
 # Let's create a data frame
 df <- data.frame(x = c(1, 2, 3, 4, 5), y = c('a', 'b', 'c', 'd', 'e'))

@@ -2,15 +2,23 @@
 #' 
 #'  Takes in actual binary response, predicted probabilities and cutoff value, and 
 #'  returns confusion matrix and overall accuracy
-#'  @param y actual binary response
+#'  @param y actual binary response variable
 #'  @param yhat predicted probabilities corresponding to the actual binary response
 #'  @param cutoff threshold value in the range 0 to 1
+#'  @details 
+#'  When we predict a binary response, first thing that we want to check is accuracy of
+#'  the model for a particular cutoff value. This function does just that and provides 
+#'  confusion matrix (numbers and percentage) and overall accuracy. Overall accuracy is
+#'  calculated as (TP + TN)/(P + N). 
+#'  
+#'  The output is a list from which the individual elements can be picked as shown in
+#'  the example.
 #'  @return a three element list: confusion matrix as a table, confusion matrix (percentages)
 #'          as a table and overall accuracy value
 #'  @author Akash Jain
 #'  @seealso \code{\link{ks}}, \code{\link{auc}}, \code{\link{iv}}, \code{\link{splitdata}}
 #'  @examples
-#'  # a data frame with y and yhat
+#'  # A data frame with y and yhat
 #' df <- data.frame(y = c(1, 0, 1, 1, 0),
 #'                  yhat = c(0.86, 0.23, 0.65, 0.92, 0.37))
 #'

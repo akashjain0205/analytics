@@ -18,6 +18,14 @@ factorise(data, colNames)
 Takes in data and colNames, and returns the data with all variables mentioned in
  colNames converted to factor
 }
+\details{
+We often face the task of converting a bunch of variables to factor. This
+ function is particularly useful in such a situation. Just specify the \code{data}
+ and variable names and all of them will be converted to factor.
+
+ It works for both data.frame and data.table and the output is data of the same
+ class as input.
+}
 \examples{
 # Let's create a data frame
 df <- data.frame(x = c(1, 2, 3, 4, 5),

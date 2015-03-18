@@ -3,7 +3,14 @@
 #'  Takes in data and colNames, and returns the data with all variables mentioned in
 #'  colNames converted to factor
 #'  @param data a data.frame or data.table
-#'  @param colNames a character vector of variable names to be converted to factor 
+#'  @param colNames a character vector of variable names to be converted to factor
+#'  @details
+#'  We often face the task of converting a bunch of variables to factor. This
+#'  function is particularly useful in such a situation. Just specify the \code{data}
+#'  and variable names and all of them will be converted to factor.
+#'  
+#'  It works for both data.frame and data.table and the output is data of the same
+#'  class as input.
 #'  @return \code{data} of same class as input with specified variables converted to factor
 #'  @author Akash Jain
 #'  @seealso \code{\link{randomise}}, \code{\link{rmdupkey}}, \code{\link{rmdupobs}}
@@ -16,6 +23,7 @@
 #' # Change the class of variables y and z to factors
 #' dfFac <- factorise(data = df, colNames = c('y', 'z'))
 #'  @export
+#'  @importFrom data.table .SD
 factorise <- function(data, colNames) {
   if(class(colNames) != 'character') {
     stop('Invalid input: colNames should be a character vector')    

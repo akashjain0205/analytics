@@ -5,6 +5,13 @@
 #'  @param decreasing a logical input, which if set to \code{FALSE} puts smallest values in
 #'         pentile 1 and if set to \code{TRUE} puts smallest values in pentile 5; \code{FALSE}
 #'         is default
+#'  @details
+#'  \code{pentile} is a convinient function to get integer pentiles of an integer or 
+#'  numeric vector. By default, the smallest values are placed in the smallest pentile.
+#'  
+#'  Sometimes one may want to put smallest values in the biggest pentile, and for that 
+#'  the user can set the \code{decreasing} argument to \code{TRUE}; by default it is
+#'  \code{FALSE}.
 #'  @return an integer vector of pentile values
 #'  @author Akash Jain
 #'  @seealso \code{\link{decile}}, \code{\link{outliers}}, \code{\link{imputemiss}}

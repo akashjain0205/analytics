@@ -2,7 +2,7 @@
 % Please edit documentation in R/ks.R
 \name{ks}
 \alias{ks}
-\title{Kolmogorov-Smirnov statistic of predicted binary response}
+\title{Kolmogorov-Smirnov statistic for predicted binary response}
 \usage{
 ks(y, yhat)
 }
@@ -17,6 +17,15 @@ a two element list: table for KS computation and KS value itself
 \description{
 Takes in actual binary response and predicted probabilities, and returns table
  used for KS computation and KS value
+}
+\details{
+Kolmogorov-Smirnov statistic can be easily computed using \code{ks} function. It
+ not only computes the statistic but also returns the table used for ks computation.
+ A chart is also plotted for quick visualization of split between percentage of
+ responders and non-responders. Deciles are used for computation.
+
+ Appropriate elements of the 2 element list (ie. ksTable or ks) can be picked
+ using the code given in the example.
 }
 \examples{
 # a data frame with y and yhat

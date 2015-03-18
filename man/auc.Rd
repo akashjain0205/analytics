@@ -17,6 +17,14 @@ area under the ROC curve
 \description{
 Takes in actual binary response and predicted probabilities, and returns auc value
 }
+\details{
+Area under the receiver operating characteristic (ROC) curve is the most sought after
+ criteria for judging how good model predictions are.
+
+ \code{auc} function calculates the true positive rates (TPR) and false positive
+ rates (FPR) for each cutoff from 0.01 to 1 and calculates the area using trapezoidal
+ approximation. A ROC curve is also generated.
+}
 \examples{
 # a data frame with y and yhat
 df <- data.frame(y = c(1, 0, 1, 1, 0, 0, 1, 0, 1, 0),

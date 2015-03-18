@@ -17,6 +17,16 @@ a two element list: unique data and duplicate data
 \description{
 Takes in a data and key, and returns data with duplicate observations by key removed
 }
+\details{
+Remove duplicate observations by key(s) is what this function does. How it is
+ different from other functions that remove duplicates is that \code{rmdupkey}
+ works for both data.frame and data.table, and it also returns the duplicated
+ observations.
+
+ Many a times we want to go back to the duplicated observations and see why that
+ duplication occured. One can pick the duplicated observations using the
+ code given in example.
+}
 \examples{
 # Let's create a data.frame
 df <- data.frame(x = c(1, 2, 1, 1), y = c(3, 3, 1, 3))

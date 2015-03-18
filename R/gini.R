@@ -2,6 +2,11 @@
 #' 
 #'  Takes in a distribution and returns gini coefficient
 #'  @param y an integer or numeric distribution
+#'  @details
+#'  To compute the gini coefficient of a distribution, \code{gini} is the right
+#'  function. It uses trapezoidal approximation to calculate the area of the curve.
+#'  
+#'  Lorenz curve is also plotted as output.
 #'  @return gini coefficient of the distribution
 #'  @author Akash Jain
 #'  @seealso \code{\link{auc}}

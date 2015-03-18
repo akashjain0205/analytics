@@ -18,6 +18,10 @@ imputemiss(vector, value)
 Takes in a vector and a value, and returns the vector with missing values imputed
  with that value
 }
+\details{
+\code{imputemiss} imputes the missing (NA) values in the vector with a specified value.
+ The function simplifies the code for imputation.
+}
 \examples{
 # Lets create a vector
 scores <- c(1, 2, 3, NA, 4, NA)

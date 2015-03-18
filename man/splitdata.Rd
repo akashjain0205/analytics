@@ -19,6 +19,15 @@ a list with two elements: train and test set
 \description{
 Takes in data, fraction (for train set) and seed, and returns train and test set
 }
+\details{
+An essential task before doing modeling is to split the modeling data into
+ train and test sets. \code{splitdata} is built for this task and returns a list
+ with train and test sets, which can be picked using the code given in example.
+
+ \code{fraction} corresponds to the train dataset, while the rest of the
+ observations go to the test dataset. If the user wants to generate the same
+ test and train dataset everytime, he should specify a \code{seed} value.
+}
 \examples{
 # Let's create a data frame
 df <- data.frame(x = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),

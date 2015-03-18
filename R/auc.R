@@ -3,6 +3,13 @@
 #'  Takes in actual binary response and predicted probabilities, and returns auc value
 #'  @param y actual binary response
 #'  @param yhat predicted probabilities corresponding to the actual binary response
+#'  @details
+#'  Area under the receiver operating characteristic (ROC) curve is the most sought after
+#'  criteria for judging how good model predictions are.
+#'  
+#'  \code{auc} function calculates the true positive rates (TPR) and false positive
+#'  rates (FPR) for each cutoff from 0.01 to 1 and calculates the area using trapezoidal
+#'  approximation. A ROC curve is also generated.
 #'  @return area under the ROC curve
 #'  @author Akash Jain
 #'  @seealso \code{\link{accuracy}}, \code{\link{ks}}, \code{\link{iv}}, \code{\link{gini}}, \code{\link{splitdata}}

@@ -16,6 +16,21 @@ a data.frame which contains the variable, category index, category,
 \description{
 Takes in a data, and returns summary of categorical variables
 }
+\details{
+While trying to understand a data, it is important to know the distribution of
+ categorical variables. \code{dqcategorical} produces an output which answers a
+ couple of questions regarding such variabes - how many distinct categories does
+ the variable have, what are the categories, what is the frequency
+ of each of them and the percentage frequency.
+
+ But first, it is critical to identify categorical variables in the data. They may be
+ integer, numeric or character. All such variables should be converted to factor; one
+ may use \code{factorise} function in this package to do this task easily.
+
+ The function identifies all the factor variables and produces an output for each
+ of them and returns a consolidated summary. It works for both data.frame and
+ data.table but the output summary is a data.frame only.
+}
 \examples{
 # Let's create a data.frame
 df <- data.frame(phone = c('IP', 'SN', 'HO', 'IP', 'SN', 'IP', 'HO', 'SN', 'IP', 'SN'),

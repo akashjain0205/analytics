@@ -3,7 +3,15 @@
 #'  Takes in data, fraction (for train set) and seed, and returns train and test set
 #'  @param data a matrix, data.frame or data.table
 #'  @param fraction proportion of observations that should go in the train set
-#'  @param seed an integer value 
+#'  @param seed an integer value
+#'  @details
+#'  An essential task before doing modeling is to split the modeling data into
+#'  train and test sets. \code{splitdata} is built for this task and returns a list
+#'  with train and test sets, which can be picked using the code given in example.
+#'  
+#'  \code{fraction} corresponds to the train dataset, while the rest of the
+#'  observations go to the test dataset. If the user wants to generate the same
+#'  test and train dataset everytime, he should specify a \code{seed} value.
 #'  @return a list with two elements: train and test set
 #'  @author Akash Jain
 #'  @seealso \code{\link{actvspred}}, \code{\link{mape}}, \code{\link{accuracy}}, 

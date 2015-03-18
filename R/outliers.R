@@ -2,6 +2,15 @@
 #' 
 #'  Takes in a vector, and returns count and index of outliers
 #'  @param vector an integer or numeric vector
+#'  @details
+#'  The function uses the same criteria to identify outliers as the one used for
+#'  box plots. All values that are greater than 75th percentile value + 1.5 times the 
+#'  inter quartile range or lesser than 25th percentile value - 1.5 times the inter
+#'  quartile range, are tagged as outliers.
+#'  
+#'  The individual elements (number of outliers and index of outliers) of the two 
+#'  element output list can be picked using the code given in example. The index 
+#'  of outliers can be used to get a vector of all outliers.
 #'  @return a list with two elements: count and index of outliers
 #'  @author Akash Jain
 #'  @seealso \code{\link{decile}}, \code{\link{pentile}}, \code{\link{imputemiss}}

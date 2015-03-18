@@ -2,6 +2,16 @@
 #' 
 #'  Takes in a data, and returns summary of date variables
 #'  @param data a data.frame or data.table
+#'  @details
+#'  \code{dqdate} produces summary of all date variables in the data. The function
+#'  identifies all variables as date if they are of class 'Date' or 'IDate'.
+#'  
+#'  Generally the dates are imported in R as character. They must be converted to
+#'  an appropriate date format and then the function should be used.
+#'  
+#'  The summary includes variable, non-missing values, missing values, minimum and
+#'  maximum of the date variabes. Input data can be a data.frame or data.table but the
+#'  output summary will be a data.frame only.
 #'  @return a data.frame which contains the variable, non-missing values, missing values, 
 #'          minimum and maximum of all date variables
 #'  @author Akash Jain
@@ -32,7 +42,12 @@ dqdate <- function(data) {
       missingValues <- sapply(dataDateVar, function(var) sum(is.na(var)))
       maximum <- lapply(dataDateVar, function(var) max(var, na.rm=T))
       minimum <- lapply(dataDateVar, function(var) min(var, na.rm=T))
-      dateVarSummary <- data.frame(variable, nonMissingValues, missingValues, minimum, maximum, row.names=NULL)
+      dateVarSummary <- data.frame(variable, 
+                                   nonMissingValues, 
+                                   missingValues, 
+                                   minimum, 
+                                   maximum, 
+                                   row.names=NULL)
       names(dateVarSummary)[c(4,5)] <- c('minimum', 'maximum')
       return(dateVarSummary)
     } else {

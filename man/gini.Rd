@@ -15,6 +15,12 @@ gini coefficient of the distribution
 \description{
 Takes in a distribution and returns gini coefficient
 }
+\details{
+To compute the gini coefficient of a distribution, \code{gini} is the right
+ function. It uses trapezoidal approximation to calculate the area of the curve.
+
+ Lorenz curve is also plotted as output.
+}
 \examples{
 # Distribution
 dist <- c(1, 4, 7, 15, 10)

@@ -1,0 +1,17 @@
+{
+    "contents" : "#' Identify outliers in a variable\n#' \n#'  Takes in a vector, and returns count and index of outliers\n#'  @param vector an integer or numeric vector\n#'  @details\n#'  The function uses the same criteria to identify outliers as the one used for\n#'  box plots. All values that are greater than 75th percentile value + 1.5 times the \n#'  inter quartile range or lesser than 25th percentile value - 1.5 times the inter\n#'  quartile range, are tagged as outliers.\n#'  \n#'  The individual elements (number of outliers and index of outliers) of the two \n#'  element output list can be picked using the code given in example. The index \n#'  of outliers can be used to get a vector of all outliers.\n#'  @return a list with two elements: count and index of outliers\n#'  @author Akash Jain\n#'  @seealso \\code{\\link{decile}}, \\code{\\link{pentile}}, \\code{\\link{imputemiss}}\n#'  @examples\n#'  # Let's create a vector\n#' scores <- c(1, 4, 7, 10, 566, 21, 25, 27, 32, 35, \n#'             49, 60, 75, 23, 45, 86, 26, 38, 34, 223, -3)\n#' \n#' # Identify the count of outliers and their index\n#' ltOutliers <- outliers(vector = scores)\n#' numOutliers <- ltOutliers$numOutliers\n#' idxOutliers <- ltOutliers$idxOutliers\n#' valOutliers <- scores[idxOutliers]\n#'  @export\noutliers <- function(vector) {\n  if(class(vector) != 'integer' && class(vector) != 'numeric') {\n    stop('Invalid input: vector should be either integer or numeric')\n  } else {\n    p25 <- quantile(vector, c(0.25), na.rm = TRUE)\n    p75 <- quantile(vector, c(0.75), na.rm = TRUE)\n    iqr <- p75 - p25\n    uplim <- p75 + 1.5*iqr\n    lowlim <- p25 - 1.5*iqr\n    numOutliers <- sum(vector < lowlim, na.rm = TRUE) + sum(vector > uplim, na.rm = TRUE)\n    idxOutliers <- sort(c(match(na.omit(vector[vector < lowlim]), vector), \n                          match(na.omit(vector[vector > uplim]), vector)))\n    valueOutliers <- vector[idxOutliers]\n    print(paste('Number of outliers:', numOutliers))\n    print(paste('Value of outliers:', paste(valueOutliers, collapse = ' ')))\n    return(list(numOutliers = numOutliers, \n                idxOutliers = idxOutliers))    \n  }\n}",
+    "created" : 1426602117701.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "443300246",
+    "id" : "D45F6930",
+    "lastKnownWriteTime" : 1426602789,
+    "path" : "~/analytics/R/outliers.R",
+    "project_path" : "R/outliers.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

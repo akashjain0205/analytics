@@ -19,6 +19,14 @@ an integer vector of pentile values
 \description{
 Takes in a vector, and returns a vector of pentiles
 }
+\details{
+\code{pentile} is a convinient function to get integer pentiles of an integer or
+ numeric vector. By default, the smallest values are placed in the smallest pentile.
+
+ Sometimes one may want to put smallest values in the biggest pentile, and for that
+ the user can set the \code{decreasing} argument to \code{TRUE}; by default it is
+ \code{FALSE}.
+}
 \examples{
 # Let's create a vector
 scores <- c(1, 4, 7, 10, 15, 21, 25, 27, 32, 35,

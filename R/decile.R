@@ -5,6 +5,13 @@
 #'  @param decreasing a logical input, which if set to \code{FALSE} puts smallest values in
 #'         decile 1 and if set to \code{TRUE} puts smallest values in decile 10; \code{FALSE}
 #'         is default
+#'  @details
+#'  \code{decile} is a convinient function to get integer deciles of an integer or 
+#'  numeric vector. By default, the smallest values are placed in the smallest decile.
+#'  
+#'  Sometimes one may want to put smallest values in the biggest decile, and for that 
+#'  the user can set the \code{decreasing} argument to \code{TRUE}; by default it is
+#'  \code{FALSE}.
 #'  @return an integer vector of decile values
 #'  @author Akash Jain
 #'  @seealso \code{\link{pentile}}, \code{\link{outliers}}, \code{\link{imputemiss}}

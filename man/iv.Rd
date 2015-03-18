@@ -17,6 +17,16 @@ information value of \code{x}
 \description{
 Takes in independent and dependent variable and returns IV value
 }
+\details{
+Information value of a variable is a significant indicator of its relevance in
+ the prediction of a binary response variable. \code{iv} computes that value using
+ the formula,
+ IV = summation[(Responders - Non-responders)*ln(Responders / Non-responders) for
+ each bin].
+
+ Ten bins are created for continous variables while categories itself are used as
+ bins for categorical independent variables.
+}
 \examples{
 # Lets create a data frame
 df <- data.frame(x = c('a', 'a', 'a', 'b', 'b', 'b'),

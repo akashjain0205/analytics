@@ -2,6 +2,11 @@
 #' 
 #'  Takes in a data and returns summary of the data
 #'  @param data a data.frame or data.table
+#'  @details
+#'  This function helps when one wants to get a quick snapshot of the data such as class,
+#'  distinct values, missing values and sample value of the variables.
+#'  
+#'  It works for both data.frame and data.table but the output will be a data.frame only.
 #'  @return a data.frame that contains variable, class, distinct values,
 #'          missing values, percentage of missing value and sample value
 #'  @author Akash Jain

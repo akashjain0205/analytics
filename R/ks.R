@@ -1,9 +1,17 @@
-#' Kolmogorov-Smirnov statistic of predicted binary response
+#' Kolmogorov-Smirnov statistic for predicted binary response
 #' 
 #'  Takes in actual binary response and predicted probabilities, and returns table 
 #'  used for KS computation and KS value
 #'  @param y actual binary response
 #'  @param yhat predicted probabilities corresponding to the actual binary response
+#'  @details
+#'  Kolmogorov-Smirnov statistic can be easily computed using \code{ks} function. It
+#'  not only computes the statistic but also returns the table used for ks computation.
+#'  A chart is also plotted for quick visualization of split between percentage of
+#'  responders and non-responders. Deciles are used for computation.
+#'  
+#'  Appropriate elements of the 2 element list (ie. ksTable or ks) can be picked
+#'  using the code given in the example.  
 #'  @return a two element list: table for KS computation and KS value itself
 #'  @author Akash Jain
 #'  @seealso \code{\link{accuracy}}, \code{\link{auc}}, \code{\link{iv}}, \code{\link{splitdata}}

@@ -3,6 +3,9 @@
 #'  Takes in actual and predicted linear response, and returns MAPE value
 #'  @param y actual linear response
 #'  @param yhat predicted linear response
+#'  @details
+#'  \code{mape} calculates the mean absolute percentage error in a predicted linear
+#'  response.
 #'  @return mean absolute percentage error
 #'  @author Akash Jain
 #'  @seealso \code{\link{actvspred}}, \code{\link{splitdata}}

@@ -2,6 +2,20 @@
 #' 
 #'  Takes in a data, and returns summary of categorical variables
 #'  @param data a data.frame or data.table
+#'  @details
+#'  While trying to understand a data, it is important to know the distribution of 
+#'  categorical variables. \code{dqcategorical} produces an output which answers a 
+#'  couple of questions regarding such variabes - how many distinct categories does 
+#'  the variable have, what are the categories, what is the frequency
+#'  of each of them and the percentage frequency.
+#'  
+#'  But first, it is critical to identify categorical variables in the data. They may be
+#'  integer, numeric or character. All such variables should be converted to factor; one
+#'  may use \code{factorise} function in this package to do this task easily.
+#'  
+#'  The function identifies all the factor variables and produces an output for each
+#'  of them and returns a consolidated summary. It works for both data.frame and 
+#'  data.table but the output summary is a data.frame only.
 #'  @return a data.frame which contains the variable, category index, category, 
 #'          category frequency and percentage frequency of all factor variables
 #'  @author Akash Jain

@@ -3,6 +3,15 @@
 #'  Takes in independent and dependent variable and returns IV value
 #'  @param x an independent variable
 #'  @param y a binary response variable
+#'  @details
+#'  Information value of a variable is a significant indicator of its relevance in
+#'  the prediction of a binary response variable. \code{iv} computes that value using
+#'  the formula,
+#'  IV = summation[(Responders - Non-responders)*ln(Responders / Non-responders) for
+#'  each bin].
+#'  
+#'  Ten bins are created for continous variables while categories itself are used as
+#'  bins for categorical independent variables.
 #'  @return information value of \code{x}
 #'  @author Akash Jain
 #'  @seealso \code{\link{accuracy}}, \code{\link{auc}}, \code{\link{ks}}, \code{\link{splitdata}}
